@@ -37,6 +37,10 @@ Graph deserialize(std::istream& stream) {
 
     size_t connections_size;
     stream >> connections_size;
+
+    // initialize empty set
+    connectivity_list[v];
+
     for (size_t j = 0; j < connections_size; j++) {
       graph::Vertex connection;
       stream >> connection;

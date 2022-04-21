@@ -4,6 +4,9 @@ namespace graph {
 
 Graph::Graph(const std::unordered_map<Vertex, std::unordered_set<Vertex>>& connectivity_list) {
   for (const auto& [from, connections] : connectivity_list) {
+    // init empty set
+    connectivity_list_[from];
+
     for (const auto& to : connections) {
       connectivity_list_[from].insert(to);
       inverse_connectivity_list_[to].insert(from);

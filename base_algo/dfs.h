@@ -4,6 +4,7 @@
 
 namespace base_algo {
 
-std::vector<bool> dfs(graph::Graph& graph, graph::Vertex root);
+std::unordered_map<graph::Vertex, bool> dfs(const graph::Graph& graph, graph::Vertex vertex);
+std::unordered_map<graph::Vertex, bool> inverseDfs(const graph::Graph& graph, graph::Vertex vertex);
 
 } // namespace base_algo

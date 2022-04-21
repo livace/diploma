@@ -1,9 +1,13 @@
 [requires]
 boost/1.75.0#f589b0997bfcc4445aed5790835b4518
+backward-cpp/1.6#d1ddbf180ab50207620da60b325171a8
+zlib/1.2.12#82202701ea360c0863f1db5008067122
 
 [options]
 boost:shared=False
 boost:fPIC=False
+zlib:shared=False
+zlib:fPIC=False
 
 [generators]
 cmake

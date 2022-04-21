@@ -2,6 +2,7 @@
 
 #include "graph/graph_serializer.h"
 #include "util/argparse.h"
+#include "util/signal_handler.h"
 
 #include <filesystem>
 
@@ -26,6 +27,8 @@ CommandLineOptions parseArgs(int argc, char** argv) {
 }
 
 int main(int argc, char** argv) {
+  util::initDefaultSignalHandler();
+
   auto args = parseArgs(argc, argv);
 
   auto graph = generator::FullGraphGenerator(args.n).generate();
