@@ -9,9 +9,16 @@ int Vertex::id() const {
   return id_;
 }
 
+bool operator<(const Vertex& lhs, const Vertex& rhs) {
+  return lhs.id() < rhs.id();
+}
+
+bool operator==(const Vertex& lhs, const Vertex& rhs) {
+  return lhs.id() == rhs.id();
+}
+
 } // namespace graph
 
-// template<>
 std::size_t std::hash<graph::Vertex>::operator()(const graph::Vertex& vertex) const noexcept {
   return std::hash<int>{}(vertex.id());
 }

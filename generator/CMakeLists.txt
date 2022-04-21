@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.16.3)
 
-project(generators)
+project(generator)
 
 add_library(
   ${PROJECT_NAME}
@@ -10,3 +10,5 @@ add_library(
 target_include_directories(${PROJECT_NAME} PUBLIC ${ROOT})
 
 target_link_libraries(${PROJECT_NAME} graph)
+
+add_subdirectory(bin)

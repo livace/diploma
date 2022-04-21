@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.16.3)
 
 project(diploma)
 
 get_filename_component(ROOT "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
+
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
 set(CMAKE_CXX_COMPILER_LAUNCHER ccache)
 set(CMAKE_CXX_STANDARD 20)
@@ -15,5 +18,6 @@ add_compile_options(-g)
 include(cmake/conan.cmake)
 
 add_subdirectory(base_algo kek/base_algo)
-add_subdirectory(generators kek/generators)
+add_subdirectory(generator kek/generator)
 add_subdirectory(graph kek/graph)
+add_subdirectory(util kek/util)

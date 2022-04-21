@@ -124,8 +124,8 @@ def run_build(build_config):
 
 
 def build_unsafe(build_config):
-    c_compiler = 'clang'
-    cpp_compiler = 'clang++'
+    c_compiler = 'clang-14'
+    cpp_compiler = 'clang++-14'
 
     build_dir = f'build_{build_config.hash()}'
 

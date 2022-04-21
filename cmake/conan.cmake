@@ -33,3 +33,7 @@ if(NOT CONAN_RETURN_CODE EQUAL 0)
 endif()
 
 message("conan installed successfully")
+
+include("${CMAKE_BINARY_DIR}/conanbuildinfo.cmake")
+set(CONAN_CMAKE_SILENT_OUTPUT true)
+conan_define_targets()

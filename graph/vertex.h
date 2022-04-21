@@ -1,6 +1,5 @@
 #pragma once
 
-#include <compare>
 #include <functional>
 #include <istream>
 #include <ostream>
@@ -14,11 +13,12 @@ public:
 
   int id() const;
 
-  friend auto operator<=>(const Vertex&, const Vertex&) = default;
-
 private:
   int id_;
 };
+
+bool operator<(const Vertex& lhs, const Vertex& rhs);
+bool operator==(const Vertex& lhs, const Vertex& rhs);
 
 } // namespace graph
 
