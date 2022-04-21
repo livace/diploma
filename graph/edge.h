@@ -8,8 +8,8 @@ class Edge {
 public:
   Edge(const Vertex& from, const Vertex& to);
 
-  const Vertex& from();
-  const Vertex& to();
+  const Vertex& from() const;
+  const Vertex& to() const;
 
 private:
   const Vertex from_;

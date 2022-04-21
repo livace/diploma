@@ -34,4 +34,16 @@ const std::unordered_set<Vertex>& Graph::inversedConnections(const Vertex& v) co
   return inverse_connectivity_list_.at(v);
 }
 
+bool Graph::has(Vertex vertex) const {
+  return connectivity_list_.count(vertex);
+}
+
+bool Graph::has(const Edge& edge) const {
+  if (!has(edge.from())) {
+    return false;
+  }
+
+  return connectivity_list_.at(edge.from()).count(edge.to());
+}
+
 } // namespace graph

@@ -5,6 +5,7 @@ project(base_algo)
 add_library(
   ${PROJECT_NAME}
   dfs.cpp
+  intersect.cpp
   is_rooted_tree.cpp
 )
 

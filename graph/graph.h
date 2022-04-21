@@ -19,6 +19,9 @@ public:
   const std::unordered_set<Vertex>& connections(const Vertex& v) const;
   const std::unordered_set<Vertex>& inversedConnections(const Vertex& v) const;
 
+  bool has(Vertex vertex) const;
+  bool has(const Edge& edge) const;
+
 private:
   std::vector<Vertex> vertices_;
 
