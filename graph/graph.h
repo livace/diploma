@@ -31,4 +31,6 @@ private:
   std::vector<Edge> edges_;
 };
 
+bool operator==(const Graph& lhs, const Graph& rhs);
+
 }

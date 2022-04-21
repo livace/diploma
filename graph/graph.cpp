@@ -46,4 +46,8 @@ bool Graph::has(const Edge& edge) const {
   return connectivity_list_.at(edge.from()).count(edge.to());
 }
 
+bool operator==(const Graph& lhs, const Graph& rhs) {
+  return lhs.vertices() == rhs.vertices() && lhs.edges() == rhs.edges();
+}
+
 } // namespace graph

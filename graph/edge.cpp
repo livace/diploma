@@ -13,5 +13,8 @@ const Vertex& Edge::to() const {
   return to_;
 }
 
+bool operator==(const Edge& lhs, const Edge& rhs) {
+  return lhs.from() == rhs.from() && lhs.to() == rhs.to();
+}
 
 } // namespace graph

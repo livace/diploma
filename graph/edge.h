@@ -16,4 +16,6 @@ private:
   const Vertex to_;
 };
 
+bool operator==(const Edge& lhs, const Edge& rhs);
+
 } // namespace graph
