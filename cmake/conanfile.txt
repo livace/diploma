@@ -1,0 +1,9 @@
+[requires]
+boost/1.75.0#f589b0997bfcc4445aed5790835b4518
+
+[options]
+boost:shared=False
+boost:fPIC=False
+
+[generators]
+cmake

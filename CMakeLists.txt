@@ -12,6 +12,8 @@ message("Build type: ${CMAKE_BUILD_TYPE}")
 
 add_compile_options(-g)
 
+include(cmake/conan.cmake)
+
 add_subdirectory(base_algo kek/base_algo)
 add_subdirectory(generators kek/generators)
 add_subdirectory(graph kek/graph)
