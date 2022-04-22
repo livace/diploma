@@ -2,15 +2,20 @@
 
 #include "graph.h"
 
+#include <unordered_map>
+#include <unordered_set>
+
 namespace graph {
 
-class Builider {
+class Builder {
 public:
-  void addEdge(int from, int to);
+  void addVertex(Vertex vertex);
+  void addEdge(Edge edge);
+
   Graph build();
 
 private:
-  std::map<int, std::vector<int>> connectivity_list_;
+  std::unordered_map<Vertex, std::unordered_set<Vertex>> connectivity_list_;
 };
 
 } // namespace graph

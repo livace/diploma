@@ -1,6 +1,7 @@
 #include "is_dag.h"
 
 #include "dfs.h"
+#include "without.h"
 
 namespace base_algo {
 
@@ -34,8 +35,8 @@ bool isDag(const graph::Graph& graph) {
   return listener.check(graph);
 }
 
-bool isAdag(const graph::Graph& graph, graph::Vertex vertex) {
-  return false;
+bool isAdag(const graph::Graph& graph, graph::Vertex root) {
+  return isDag(without(graph, root));
 }
 
 } // namespace base_algo

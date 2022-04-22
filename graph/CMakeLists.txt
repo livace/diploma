@@ -4,6 +4,7 @@ project(graph)
 
 add_library(
   ${PROJECT_NAME}
+  builder.cpp
   edge.cpp
   graph.cpp
   graph_serializer.cpp

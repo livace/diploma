@@ -9,6 +9,7 @@ add_library(
   is_nested.cpp
   is_rooted_tree.cpp
   is_dag.cpp
+  without.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} util)
