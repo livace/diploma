@@ -8,6 +8,7 @@ add_library(
   intersect.cpp
   is_nested.cpp
   is_rooted_tree.cpp
+  is_dag.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} util)
