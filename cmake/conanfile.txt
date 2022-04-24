@@ -2,6 +2,7 @@
 boost/1.75.0#f589b0997bfcc4445aed5790835b4518
 backward-cpp/1.6#d1ddbf180ab50207620da60b325171a8
 zlib/1.2.12#82202701ea360c0863f1db5008067122
+tl-expected/20190710#2aa7175c21fde6bde0d01b5706a5a58b
 
 [options]
 boost:shared=False

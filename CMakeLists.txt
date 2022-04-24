@@ -17,6 +17,7 @@ add_compile_options(-g)
 
 include(cmake/conan.cmake)
 
+add_subdirectory(baseline kek/baseline)
 add_subdirectory(base_algo kek/base_algo)
 add_subdirectory(generator kek/generator)
 add_subdirectory(graph kek/graph)

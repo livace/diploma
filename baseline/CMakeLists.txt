@@ -1,16 +1,10 @@
 cmake_minimum_required(VERSION 3.16.3)
 
-project(base_algo)
+project(baseline)
 
 add_library(
   ${PROJECT_NAME}
-  dfs.cpp
-  intersect.cpp
-  is_nested.cpp
-  is_rooted_tree.cpp
-  is_dag.cpp
-  is_undirected.cpp
-  without.cpp
+  adag_selection.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} util)
