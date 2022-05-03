@@ -1,20 +1,18 @@
 #include "graph.h"
 
+#include "util/assert.h"
+
 namespace graph {
+
+Graph::Graph() {}
 
 Graph::Graph(const std::unordered_map<Vertex, std::unordered_set<Vertex>>& connectivity_list) {
   for (const auto& [from, connections] : connectivity_list) {
-    // init empty set
-    connectivity_list_[from];
+    addVertex(from);
 
     for (const auto& to : connections) {
-      connectivity_list_[from].insert(to);
-      inverse_connectivity_list_[to].insert(from);
-
-      edges_.emplace_back(from, to);
+      addEdge({from, to});
     }
-
-    vertices_.push_back(from);
   }
 }
 
@@ -27,10 +25,16 @@ const std::vector<Edge>& Graph::edges() const {
 }
 
 const std::unordered_set<Vertex>& Graph::connections(const Vertex& v) const {
+  if (!connectivity_list_.count(v)) {
+    ASSERT_FATAL(false, "No such vertex " << v << " in graph");
+  }
   return connectivity_list_.at(v);
 }
 
 const std::unordered_set<Vertex>& Graph::inversedConnections(const Vertex& v) const {
+  if (!inverse_connectivity_list_.count(v)) {
+    ASSERT_FATAL(false, "No such vertex " << v << " in graph");
+  }
   return inverse_connectivity_list_.at(v);
 }
 
@@ -44,6 +48,24 @@ bool Graph::has(const Edge& edge) const {
   }
 
   return connectivity_list_.at(edge.from()).count(edge.to());
+}
+
+void Graph::addEdge(Edge edge) {
+  addVertex(edge.from());
+  addVertex(edge.to());
+
+  connectivity_list_[edge.from()].insert(edge.to());
+  inverse_connectivity_list_[edge.to()].insert(edge.from());
+
+  edges_.push_back(edge);
+}
+
+void Graph::addVertex(Vertex vertex) {
+  if (!connectivity_list_.count(vertex)) {
+    connectivity_list_[vertex];
+    inverse_connectivity_list_[vertex];
+    vertices_.push_back(vertex);
+  }
 }
 
 bool operator==(const Graph& lhs, const Graph& rhs) {

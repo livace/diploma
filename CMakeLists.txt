@@ -13,12 +13,13 @@ set(CMAKE_C_STANDART 11)
 
 message("Build type: ${CMAKE_BUILD_TYPE}")
 
-add_compile_options(-g)
+add_compile_options(-gdwarf-4)
 
 include(cmake/conan.cmake)
 
 add_subdirectory(baseline kek/baseline)
 add_subdirectory(base_algo kek/base_algo)
+add_subdirectory(dot kek/dot)
 add_subdirectory(generator kek/generator)
 add_subdirectory(graph kek/graph)
 add_subdirectory(junk kek/junk)

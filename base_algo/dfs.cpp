@@ -27,7 +27,9 @@ public:
       return;
     }
 
-    listener_->onBeforeVertex(vertex);
+    if (listener_ != nullptr) {
+      listener_->onBeforeVertex(vertex);
+    }
 
     visited_[vertex] = true;
 
@@ -37,7 +39,9 @@ public:
       visit(connection);
     }
 
-    listener_->onAfterVertex(vertex);
+    if (listener_ != nullptr) {
+      listener_->onAfterVertex(vertex);
+    }
   }
 
   std::unordered_map<graph::Vertex, bool> visited() const {

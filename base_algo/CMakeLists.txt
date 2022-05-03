@@ -9,7 +9,9 @@ add_library(
   is_nested.cpp
   is_rooted_tree.cpp
   is_dag.cpp
+  make_undirected.cpp
   is_undirected.cpp
+  subtract.cpp
   without.cpp
 )
 

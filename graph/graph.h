@@ -11,6 +11,7 @@ namespace graph {
 
 class Graph {
 public:
+  Graph();
   Graph(const std::unordered_map<Vertex, std::unordered_set<Vertex>>& connectivity_list);
 
   const std::vector<Vertex>& vertices() const;
@@ -21,6 +22,9 @@ public:
 
   bool has(Vertex vertex) const;
   bool has(const Edge& edge) const;
+
+  void addVertex(Vertex vertex);
+  void addEdge(Edge edge);
 
 private:
   std::vector<Vertex> vertices_;

@@ -12,7 +12,7 @@ from root import repo_root
 
 class BuildConfig:
     def __init__(self):
-        self.build_type = 'Release'
+        self.build_type = 'Debug'
         self.build_dir = 'build'
         self.rebuild = False
         self.sanitize = None
@@ -46,7 +46,7 @@ class BuildConfig:
             return 'Debug'
         elif args.release:
             return 'Release'
-        return 'Release'    # looks like reasonable default
+        return 'Debug'
 
     def parse_args():
         parser = argparse.ArgumentParser()

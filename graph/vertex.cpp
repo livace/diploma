@@ -23,7 +23,7 @@ std::size_t std::hash<graph::Vertex>::operator()(const graph::Vertex& vertex) co
   return std::hash<int>{}(vertex.id());
 }
 
-std::ostream& operator<<(std::ostream& os, const graph::Vertex& vertex) {
+std::ostream& operator<<(std::ostream& os, graph::Vertex vertex) {
   return os << vertex.id();
 }
 

@@ -9,4 +9,4 @@ add_executable(
 
 target_include_directories(full_graph_generator PUBLIC ${ROOT})
 
-target_link_libraries(full_graph_generator graph generator util)
+target_link_libraries(full_graph_generator graph generator util dot)

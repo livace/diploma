@@ -24,10 +24,8 @@ bool operator==(const Vertex& lhs, const Vertex& rhs);
 
 template<>
 struct std::hash<graph::Vertex> {
-  std::size_t operator()(const graph::Vertex& vertex) const noexcept; // {
-  //   return std::hash<int>{}(vertex.id());
-  // }
+  std::size_t operator()(const graph::Vertex& vertex) const noexcept;
 };
 
-std::ostream& operator<<(std::ostream& os, const graph::Vertex& vertex);
+std::ostream& operator<<(std::ostream& os, graph::Vertex vertex);
 std::istream& operator>>(std::istream& is, graph::Vertex& vertex);

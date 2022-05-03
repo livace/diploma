@@ -9,4 +9,5 @@ target_link_libraries(
   ${PROJECT_NAME}
   CONAN_PKG::boost
   CONAN_PKG::backward-cpp
+  CONAN_PKG::tl-expected
 )

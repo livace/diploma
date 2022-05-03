@@ -24,7 +24,8 @@
 
 namespace util {
 
-using Expected = tl::expected;
+template <class ...Args>
+using Expected = tl::expected<Args...>;
 
 using Error = std::string;
 
