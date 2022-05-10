@@ -3,6 +3,8 @@
 #include "dfs.h"
 #include "without.h"
 
+#include "util/log.h"
+
 namespace base_algo {
 
 class DagListener : public DfsListener {
@@ -13,7 +15,7 @@ public:
 
   bool check(const graph::Graph& graph) {
     for (auto edge : graph.edges()) {
-      if (depth_[edge.from()] < depth_[edge.to()]) {
+      if (depth_.at(edge.from()) < depth_.at(edge.to())) {
         return false;
       }
     }

@@ -5,23 +5,23 @@
 namespace base_algo {
 
 graph::Graph intersect(graph::Graph lhs, graph::Graph rhs) {
-  std::unordered_map<graph::Vertex, std::unordered_set<graph::Vertex>> connectivity_list;
+  graph::Graph graph;
 
   for (auto vertex : lhs.vertices()) {
     if (!rhs.has(vertex)) {
       continue;
     }
 
-    connectivity_list[vertex];
+    graph.addVertex(vertex);
 
     for (auto connection : lhs.connections(vertex)) {
-      if (rhs.has(graph::Edge(vertex, connection))) {
-        connectivity_list[vertex].insert(connection);
+      if (rhs.has({vertex, connection})) {
+        graph.addEdge({vertex, connection});
       }
     }
   }
 
-  return graph::Graph(connectivity_list);
+  return graph;
 }
 
 } // namespace base_algo

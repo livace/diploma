@@ -3,7 +3,7 @@
 #include "graph/graph_serializer.h"
 #include "util/argparse.h"
 #include "util/signal_handler.h"
-#include "baseline/adag_selection.h"
+#include "algos/adag_selection.h"
 #include "dot/dot_serializer.h"
 
 #include <iostream>
@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
 
   auto args = parseArgs(argc, argv);
   auto graph = graph::deserialize(args.path);
-  dot::DotSerializer serializer;
-  serializer.addGraph(graph);
+  dot::DotSerializer serializer("graph");
+  serializer.addGraph(graph, "graph", "black");
   serializer.serialize(std::cout);
 }

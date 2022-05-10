@@ -3,7 +3,7 @@
 #include "graph/graph_serializer.h"
 #include "util/argparse.h"
 #include "util/signal_handler.h"
-#include "baseline/adag_selection.h"
+#include "algos/adag_selection.h"
 #include "dot/dot_serializer.h"
 
 #include <iostream>
@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
 
   auto args = parseArgs(argc, argv);
   auto graph = graph::deserialize(args.path);
-  auto selector = baseline::AdagSelector(graph, args.vertex);
+  auto selector = algos::AdagSelector(graph, args.vertex);
   auto res = selector.build();
 
   if (!res.has_value()) {
@@ -46,10 +46,10 @@ int main(int argc, char** argv) {
 
   auto diff = base_algo::subtract(base_algo::subtract(graph, gadag), dfs_tree);
 
-  dot::DotSerializer serializer;
-  serializer.addGraph(gadag, "red");
-  serializer.addGraph(dfs_tree, "blue");
-  serializer.addGraph(diff, "grey");
+  dot::DotSerializer serializer("adag");
+  serializer.addGraph(gadag, "gadag", "red");
+  serializer.addGraph(dfs_tree, "dfs_tree", "blue");
+  serializer.addGraph(diff, "diff", "grey");
   serializer.markVertex(args.vertex, "red");
   serializer.serialize(std::cout);
 }

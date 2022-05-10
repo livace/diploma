@@ -42,8 +42,8 @@ int main(int argc, char** argv) {
   graph::serialize(args.dest, graph);
 
   if (!args.dot_dest.empty()) {
-    dot::DotSerializer serializer;
-    serializer.addGraph(graph);
+    dot::DotSerializer serializer("graph");
+    serializer.addGraph(graph, "graph", "black");
 
     std::ofstream of(args.dot_dest);
     serializer.serialize(of);

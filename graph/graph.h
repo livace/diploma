@@ -26,6 +26,8 @@ public:
   void addVertex(Vertex vertex);
   void addEdge(Edge edge);
 
+  friend bool operator==(const Graph& lhs, const Graph& rhs);
+
 private:
   std::vector<Vertex> vertices_;
 
@@ -34,7 +36,5 @@ private:
 
   std::vector<Edge> edges_;
 };
-
-bool operator==(const Graph& lhs, const Graph& rhs);
 
 }

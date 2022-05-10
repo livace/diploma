@@ -9,12 +9,12 @@ namespace graph {
 class Vertex {
 public:
   Vertex();
-  Vertex(int id);
+  explicit Vertex(std::string id);
 
-  int id() const;
+  std::string id() const;
 
 private:
-  int id_;
+  std::string id_;
 };
 
 bool operator<(const Vertex& lhs, const Vertex& rhs);

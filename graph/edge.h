@@ -12,8 +12,8 @@ public:
   const Vertex& to() const;
 
 private:
-  const Vertex from_;
-  const Vertex to_;
+  Vertex from_;
+  Vertex to_;
 };
 
 bool operator==(const Edge& lhs, const Edge& rhs);

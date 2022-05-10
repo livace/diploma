@@ -10,3 +10,12 @@ add_executable(
 target_include_directories(full_graph_generator PUBLIC ${ROOT})
 
 target_link_libraries(full_graph_generator graph generator util dot)
+
+add_executable(
+  random_graph_generator
+  random_graph_generator_cli.cpp
+)
+
+target_include_directories(random_graph_generator PUBLIC ${ROOT})
+
+target_link_libraries(random_graph_generator graph generator util dot)

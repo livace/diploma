@@ -2,10 +2,10 @@
 
 namespace graph {
 
-Vertex::Vertex() : id_(0) {}
-Vertex::Vertex(int id) : id_(id) {}
+Vertex::Vertex() : id_("empty") {}
+Vertex::Vertex(std::string id) : id_(id) {}
 
-int Vertex::id() const {
+std::string Vertex::id() const {
   return id_;
 }
 
@@ -20,7 +20,7 @@ bool operator==(const Vertex& lhs, const Vertex& rhs) {
 } // namespace graph
 
 std::size_t std::hash<graph::Vertex>::operator()(const graph::Vertex& vertex) const noexcept {
-  return std::hash<int>{}(vertex.id());
+  return std::hash<std::string>{}(vertex.id());
 }
 
 std::ostream& operator<<(std::ostream& os, graph::Vertex vertex) {
@@ -28,7 +28,7 @@ std::ostream& operator<<(std::ostream& os, graph::Vertex vertex) {
 }
 
 std::istream& operator>>(std::istream& is, graph::Vertex& vertex) {
-  int id;
+  std::string id;
   is >> id;
   vertex = graph::Vertex(id);
 

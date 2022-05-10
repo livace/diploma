@@ -1,0 +1,29 @@
+digraph GG_graph {
+
+subgraph G_graph {
+edge [color = black]
+"5" -> "2" [dir = none]
+"4" -> "15" [dir = none]
+"16" -> "12" [dir = none]
+"3" -> "13" [dir = none]
+"2" -> "0" [dir = none]
+"2" -> "19" [dir = none]
+"15" -> "14" [dir = none]
+"1" -> "0" [dir = none]
+"9" -> "6" [dir = none]
+"9" -> "2" [dir = none]
+"7" -> "1" [dir = none]
+"12" -> "0" [dir = none]
+"8" -> "10" [dir = none]
+"8" -> "1" [dir = none]
+"18" -> "0" [dir = none]
+"11" -> "0" [dir = none]
+"19" -> "17" [dir = none]
+"19" -> "15" [dir = none]
+"6" -> "3" [dir = none]
+"12" -> "1" [dir = none]
+"8" -> "12" [dir = none]
+"8" -> "5" [dir = none]
+}
+
+}

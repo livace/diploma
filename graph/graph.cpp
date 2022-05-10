@@ -51,8 +51,14 @@ bool Graph::has(const Edge& edge) const {
 }
 
 void Graph::addEdge(Edge edge) {
+  ASSERT_FATAL(edge.from() != edge.to(), "Trying to add " << edge.from() << " -> " << edge.to());
+
   addVertex(edge.from());
   addVertex(edge.to());
+
+  if (connectivity_list_[edge.from()].count(edge.to())) {
+    return;
+  }
 
   connectivity_list_[edge.from()].insert(edge.to());
   inverse_connectivity_list_[edge.to()].insert(edge.from());
@@ -69,7 +75,7 @@ void Graph::addVertex(Vertex vertex) {
 }
 
 bool operator==(const Graph& lhs, const Graph& rhs) {
-  return lhs.vertices() == rhs.vertices() && lhs.edges() == rhs.edges();
+  return lhs.connectivity_list_ == rhs.connectivity_list_;
 }
 
 } // namespace graph

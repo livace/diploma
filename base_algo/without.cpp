@@ -22,4 +22,20 @@ graph::Graph without(const graph::Graph& graph, graph::Vertex vertex) {
   return builder.build();
 }
 
+graph::Graph without(const graph::Graph& graph, graph::Edge edge) {
+  graph::Builder builder;
+
+  for (auto graph_vertex : graph.vertices()) {
+    builder.addVertex(graph_vertex);
+  }
+
+  for (auto some_edge : graph.edges()) {
+    if (some_edge != edge) {
+      builder.addEdge(some_edge);
+    }
+  }
+
+  return builder.build();
+}
+
 } // namespace base_algo

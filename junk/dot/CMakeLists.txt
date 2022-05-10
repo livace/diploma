@@ -12,7 +12,7 @@ target_link_libraries(
   util
   graph
   base_algo
-  baseline
+  algos
   dot
 )
 

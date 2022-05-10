@@ -20,5 +20,5 @@ int main(int argc, char** argv) {
 
   auto graph = graph::deserialize(args.path);
 
-  auto [tree1, tree2] = baseline::cycleSelection();
+  auto [tree1, tree2] = algos::cycleSelection();
 }

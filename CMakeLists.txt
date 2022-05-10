@@ -17,7 +17,19 @@ add_compile_options(-gdwarf-4)
 
 include(cmake/conan.cmake)
 
-add_subdirectory(baseline kek/baseline)
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  add_compile_options(-O0)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-omit-frame-pointer -fsanitize=address ")
+  set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fno-omit-frame-pointer -fsanitize=address")
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+  add_compile_options(-Ofast)
+else()
+  message(FATAL_ERROR "unknown build type: ${CMAKE_BUILD_TYPE}")
+endif()
+
+
+
+add_subdirectory(algos kek/algos)
 add_subdirectory(base_algo kek/base_algo)
 add_subdirectory(dot kek/dot)
 add_subdirectory(generator kek/generator)

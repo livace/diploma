@@ -5,12 +5,16 @@ project(base_algo)
 add_library(
   ${PROJECT_NAME}
   dfs.cpp
+  contains.cpp
   intersect.cpp
   is_nested.cpp
   is_rooted_tree.cpp
   is_dag.cpp
-  make_undirected.cpp
+  is_connected.cpp
+  is_two_connected.cpp
   is_undirected.cpp
+  join.cpp
+  make_undirected.cpp
   subtract.cpp
   without.cpp
 )
