@@ -5,6 +5,7 @@ project(base_algo)
 add_library(
   ${PROJECT_NAME}
   dfs.cpp
+  distance.cpp
   contains.cpp
   intersect.cpp
   is_nested.cpp
@@ -15,6 +16,7 @@ add_library(
   is_undirected.cpp
   join.cpp
   make_undirected.cpp
+  test_connectivity.cpp
   subtract.cpp
   without.cpp
 )
