@@ -1,0 +1,30 @@
+digraph G {
+    rankdir="LR";
+    dpi=500
+    bgcolor="transparent"
+    node [colorscheme=dark24]
+    edge [colorscheme=dark24]
+
+    edge [color=white]
+    node [color=white, fontcolor=white]
+
+    1 -> 2  [color=3]
+    2 -> 3  [color=3]
+    3 -> 4  [color=2]
+    4 -> 5  [color=2]
+
+    // 5 -> 6  [color=2]
+    // 6 -> 7  [color=2]
+    // 7 -> 8  [color=1]
+    // 8 -> 9  [color=1]
+    // 9 -> 10 [color=1]
+
+    6 -> 5  [dir=back, color=2]
+    7 -> 6  [dir=back, color=1]
+    8 -> 7  [dir=back, color=1]
+    9 -> 8  [dir=back, color=1]
+
+    // 1 -> 10 [style="invis"]
+
+    9 [color=1]
+}

@@ -1,0 +1,44 @@
+digraph G {
+    dpi=500
+    rankdir="LR";
+    bgcolor="transparent"
+    node [colorscheme=dark23]
+    edge [colorscheme=dark23]
+
+    edge [color=white]
+    node [color=white, fontcolor=white]
+
+    subgraph cluster_0 {
+        rankdir="LR";
+        rank=same;
+        color=white
+        01 [label=""]
+        02 [label=""]
+        03 [label=""]
+    }
+
+    subgraph cluster_1 {
+        rankdir="LR";
+        color=white
+        11 [label=""]
+        12 [label=""]
+        13 [label=""]
+    }
+
+    subgraph cluster_2 {
+        color=white
+        21 [label=""]
+    }
+
+    01 -> 12 [dir=none]
+    01 -> 13 [dir=none]
+    02 -> 12 [dir=none]
+    02 -> 11 [dir=none]
+    03 -> 11 [dir=none]
+
+    12 -> 21 [dir=none]
+    13 -> 21 [dir=none]
+
+    02 -> 21 [dir=none]
+    03 -> 21 [dir=none]
+}

@@ -1,0 +1,15 @@
+digraph G {
+    dpi=500
+    bgcolor="transparent"
+    node [colorscheme=dark23]
+    edge [colorscheme=dark23]
+
+    edge [color=white]
+    node [color=white, fontcolor=white]
+
+    1 -> 2 [dir=none]
+    2 -> 3 [style=dotted, dir=none]
+    1 -> 4
+    2 -> 5 [dir=back]
+    2 -> 6
+}
